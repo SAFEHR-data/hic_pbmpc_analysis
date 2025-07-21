@@ -71,16 +71,21 @@ df_procedure_occurance <- custom_omop_ds$procedure_occurrence %>%
 # Add human-readable concept names to the dataset using OMOP concept mappings  
 df_procedure_occurance <- df_procedure_occurance %>%omop_join_name_all()
 
+
+# Count and display columns with missing (NA) values
 df_procedure_occurance %>%
   summarise(across(everything(), ~ sum(is.na(.)))) %>%
   pivot_longer(cols = everything(), names_to = "column", values_to = "na_count") %>%
-  arrange(desc(na_count)) %>% view
+  arrange(desc(na_count)) %>%
+  filter(na_count > 0) %>%
+  view()
 
 
 df_visit_detail <- custom_omop_ds$visit_detail %>%
   filter(visit_detail_id %in% df_procedure_occurance$visit_detail_id) %>% as_tibble() %>% collect()
 
 # A tibble: 0 × 19 : Visit detail id is column is empty
+
 
 
 # Load relevant visit_occurrence records from custom OMOP dataset
@@ -94,7 +99,41 @@ df_visit_occurrence <- custom_omop_ds$visit_occurrence %>%
 df_visit_occurrence <- df_visit_occurrence %>%
   omop_join_name_all()
 
-df_visit_occurrence %>% view()
+
+# Join procedure and visit data by person_id, visit_occurrence_id, and date
+df_procedure_visit_occurrence <-df_procedure_occurance %>%
+  full_join(
+    df_visit_occurrence,
+    by = c(
+      "person_id" = "person_id",
+      "visit_occurrence_id" = "visit_occurrence_id",
+      "procedure_date" = "visit_start_date"
+    )
+  ) %>% 
+  select(
+    person_id,
+    procedure_occurrence_id,
+    procedure_concept_id,
+    procedure_concept_name,
+    procedure_source_value,
+    procedure_date,
+    procedure_datetime,
+    procedure_end_date,
+    procedure_end_datetime, 
+    visit_occurrence_id,
+    visit_concept_name,
+    visit_start_datetime,
+    visit_end_date,
+    visit_end_datetime,
+    care_site_id
+  ) %>%
+  collect()
+
+
+df_procedure_visit_occurrence %>% view()
+
+
+
 
 
 
