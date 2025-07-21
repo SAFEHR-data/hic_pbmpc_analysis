@@ -5,6 +5,7 @@ library(purrr)
 
 
 
+
 read_omop_dataset <- function(path) {
   batches <- fs::dir_ls(path, type = "directory")
   
