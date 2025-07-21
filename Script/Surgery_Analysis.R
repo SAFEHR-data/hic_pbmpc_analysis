@@ -80,6 +80,7 @@ df_procedure_occurance %>%
   filter(na_count > 0) %>%
   view()
 
+# Visit detail 
 
 df_visit_detail <- custom_omop_ds$visit_detail %>%
   filter(visit_detail_id %in% df_procedure_occurance$visit_detail_id) %>% as_tibble() %>% collect()
@@ -101,8 +102,9 @@ df_visit_occurrence <- df_visit_occurrence %>%
 
 
 # Join procedure and visit data by person_id, visit_occurrence_id, and date
+rm(df_procedure_visit_occurrence)
 df_procedure_visit_occurrence <-df_procedure_occurance %>%
-  full_join(
+  left_join(
     df_visit_occurrence,
     by = c(
       "person_id" = "person_id",
@@ -131,6 +133,20 @@ df_procedure_visit_occurrence <-df_procedure_occurance %>%
 
 
 df_procedure_visit_occurrence %>% view()
+
+# Plot top 50 procedure names by count
+plot_procedures <-df_procedure_visit_occurrence %>%
+  count(procedure_concept_name, sort = TRUE) %>%
+  top_n(50, n) %>%
+  ggplot(aes(x = reorder(procedure_concept_name, n), y = n)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Top 50 Procedure Concept Names",
+    x = "Procedure Concept Name",
+    y = "Count"
+  ) +
+  theme_minimal()
 
 
 
