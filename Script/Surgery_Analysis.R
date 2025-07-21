@@ -1,9 +1,7 @@
 library(arrow)
 library(tools)
 library(purrr)
-
-
-
+library(tidyverse)
 
 
 read_omop_dataset <- function(path) {
@@ -32,9 +30,12 @@ read_omop_dataset <- function(path) {
   return(omop_ds)
 }
 
-custom_path <- "/data/mqummeru/Extract_hic_PBPMC/hic_pbmpc_20250217_133600/"   # e.g., "/data/omop/custom/"
+custom_path <- "/data/mqummeru/Extract_hic_PBPMC/"   # e.g., "/data/omop/custom/"
 
 custom_omop_ds <- read_omop_dataset(custom_path)
+
+
+custom_omop_ds$
 
 # Extract distinct procedure_occurrence_id values where the plugin provenance is "surgical"
 df_surgical_procedure_id<- custom_omop_ds$procedure_occurrence_links %>% 
