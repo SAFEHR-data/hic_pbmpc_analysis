@@ -1,3 +1,10 @@
+library(arrow)
+library(tools)
+library(purrr)
+library(tidyverse)
+library(omopcept)
+library(here)
+
 read_omop_dataset <- function(path) {
   # List all subdirectories (each subdir = a table name like 'visit_occurrence')
   list.dirs(path, recursive = FALSE) |>
@@ -35,3 +42,4 @@ read_omop_dataset <- function(path) {
 
 
 custom_path <- "/data/mqummeru/Extract_hic_PBPMC/"   # e.g., "/data/omop/custom/"
+custom_omop_ds <- read_omop_dataset(custom_path)

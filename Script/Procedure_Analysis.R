@@ -1,17 +1,4 @@
-library(arrow)
-library(tools)
-library(purrr)
-library(tidyverse)
-library(omopcept)
-library(here)
-
-
 source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
-
-
-custom_omop_ds <- read_omop_dataset(custom_path)
-
-
 
 # Extract distinct procedure_occurrence_id values where the plugin provenance is "surgical"
 # rm(df_surgical_procedure_id)
