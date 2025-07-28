@@ -1,0 +1,171 @@
+"","procedure_concept_name","procedure_source_concept_id","n"
+"1","Administration of general anesthetic",44517112,267
+"2","Aspiration of lesion of spinal cord",44507963,7
+"3","Attention to intrathecal drug delivery device adjacent to spinal cord",44507999,781
+"4","Attention to neurostimulator adjacent to spinal cord",44507965,7
+"5","Biopsy of lesion of spinal cord",44507962,5
+"6","Biopsy of lesion of spinal cord meninges",44507979,1
+"7","Biopsy of spinal nerve root lesion",0,1
+"8","Bony decompression of spinal nerve root",0,1
+"9","CT guided injection of cervical spinal nerve root",0,226
+"10","CT guided injection of lumbar spinal nerve root",0,419
+"11","CT guided injection of sacral spinal nerve root",0,34
+"12","CT guided injection of thoracic spinal nerve root",0,6
+"13","Cerebrospinal fluid collection",44508007,1815
+"14","Cervical laminectomy and excision of intradural spinal lesion",0,8
+"15","Cervical laminoplasty with decompression of spinal cord",0,2
+"16","Closure of cerebrospinal fluid leak from nose",0,8
+"17","Closure of cerebrospinal fluid leak from spinal cord",0,1
+"18","Closure of fistula of cerebrospinal fluid",0,1
+"19","Closure repair of cerebrospinal fluid leak from spinal cord",0,2
+"20","Craniocervical spinal fusion",44515067,5
+"21","Creation of connection from spinal syrinx",0,2
+"22","Creation of subcutaneous cerebrospinal fluid reservoir",44508304,22
+"23","Decompression of spinal cord",0,3
+"24","Delivery of rehabilitation for spinal cord injury",44514226,3
+"25","Denervation of spinal facet joint of lumbar vertebra",44515142,2
+"26","Denervation of spinal facet joint of thoracic vertebra",44515140,1
+"27","Destruction of spinal nerve root",44508012,3
+"28","Dilation of rectal stricture under nonlocal anesthesia",0,1
+"29","Drainage of cerebrospinal fluid",44507992,11
+"30","Drainage of cerebrospinal fluid",44507995,1
+"31","Epidural anesthesia",44517116,2913
+"32","Epidural injection using fluoroscopic guidance",0,37
+"33","Epidural lumbar injection of blood patch",0,7
+"34","Examination of oral cavity under general anesthesia",0,86
+"35","Excision of cyst of spinal cord",0,2
+"36","Excision of cyst of spinal cord meninges",0,1
+"37","Excision of lamina of lumbar vertebra for decompression of spinal cord",0,23
+"38","Excision of lesion of extradural spinal cord",0,1
+"39","Excision of lesion of extradural spinal cord",44507945,18
+"40","Excision of lesion of intradural extramedullary spinal cord",0,11
+"41","Excision of lesion of intradural extramedullary spinal cord",44507946,59
+"42","Excision of lesion of intradural intramedullary spinal cord",0,5
+"43","Excision of lesion of intradural intramedullary spinal cord",44507944,14
+"44","Excision of lesion of intramedullary spinal cord",0,5
+"45","Excision of lymphedematous tissue plus local skin graft",0,1
+"46","Excision of regional lymph nodes",0,1
+"47","Excision of regional lymph nodes",44514482,1
+"48","Excision of spinal cord abscess",0,1
+"49","Excision of spinal cord hematoma",0,1
+"50","Excision of spinal cord vascular malformation",0,2
+"51","Excision of spinal nerve root tumor",0,4
+"52","Excision of tumor of spinal cord meninges",0,4
+"53","Extirpation of lesion of meninges of spinal cord",44507977,26
+"54","Extirpation of lesion of spinal cord",44507943,12
+"55","Extirpation of lesion of spinal nerve root",44508008,27
+"56","Fixation of spinal fracture",44515131,4
+"57","Fluoroscopic angiography of spinal artery with contrast",0,56
+"58","Fluoroscopy guided insertion of spinal cord stimulator",0,1
+"59","Fluoroscopy guided percutaneous embolization of spinal arteriovenous malformation with contrast",0,8
+"60","Freeing of spinal tether",44507971,1
+"61","Full thickness excision of lip, reconstruction with local flap",0,1
+"62","General psychiatric examination, not elsewhere classified",0,94
+"63","General psychiatric examination, requested by authority",0,59
+"64","Gynaecological examination (general)(routine)",0,1
+"65","Implantation of intrathecal drug delivery device adjacent to spinal cord",44507998,47
+"66","Incision of spinal nerve root",44508009,2
+"67","Inhalation general anesthesia",44517108,2
+"68","Injection into sacral epidural space",0,1
+"69","Injection of autologous whole blood into spinal epidural space",44507985,72
+"70","Injection of destructive substance into spinal nerve root",44508011,2
+"71","Injection of destructive substance into spinal nerve root",44508014,1575
+"72","Insertion of catheter into cervical epidural space",0,1
+"73","Insertion of catheter into lumbar epidural space",0,47
+"74","Insertion of catheter into thoracic epidural space",0,75
+"75","Insertion of neurostimulator electrodes into the spinal cord",44507968,7
+"76","Laminectomy with excision of intraspinal lesion",0,3
+"77","Local anesthesia",44517121,2
+"78","Local anesthetic block of spinal nerve root using fluoroscopic guidance",0,4
+"79","Local anesthetic intercostal nerve block",0,8
+"80","Local anesthetic lumbar epidural block",44517113,3010
+"81","Local anesthetic nerve block",44517117,85
+"82","Local anesthetic sacral epidural block",0,9
+"83","Local anesthetic sacral epidural block",44517114,4
+"84","Local excision of lesion of vulva",0,2
+"85","Local excision of skin",0,3
+"86","Local fasciocutaneous flap",44513110,5
+"87","Local flap of skin to neck",0,1
+"88","Local myocutaneous flap",44513103,4
+"89","Local myocutaneous flap",44513105,2
+"90","Local subcutaneous pedicle island flap, fasciocutaneous, to head or neck",44513106,4
+"91","Local subcutaneous pedicle island flap, myocutaneous, to head or neck",44513101,11
+"92","Local transposition flap, axial pattern, to head or neck",44513118,6
+"93","Local transposition flap, random pattern, to head or neck",44513120,6
+"94","Localized fusion of joints of hindfoot",0,1
+"95","Localized fusion of joints of hindfoot",44515252,4
+"96","Localized fusion of joints of midfoot and forefoot",0,1
+"97","Localized fusion of joints of midfoot and forefoot",44515248,3
+"98","Lumbar laminectomy and excision of intradural spinal lesion",0,11
+"99","Lumbar spinal fusion",0,8
+"100","Lysis of adhesions of spinal cord",0,1
+"101","Lysis of adhesions of spinal meninges",44507978,10
+"102","MRI of cerebrospinal fluid flow",0,126
+"103","MRI of spinal cord",0,1260
+"104","MRI of spinal cord with contrast",0,167
+"105","Manipulation of knee joint under general anesthesia",0,6
+"106","Marsupialization of spinal cyst",0,1
+"107","Neurostimulation of spinal cord tissue",0,18
+"108","Partial extirpation of spinal cord",44507948,1
+"109","Partial thoracic corpectomy with decompression of spinal cord, nerve roots and cauda equina using extracavitary approach",0,1
+"110","Percutaneous embolization of arteriovenous fistula of spinal dura using fluoroscopic guidance with contrast",0,3
+"111","Percutaneous embolization of spinal neoplasm using fluoroscopic guidance with contrast",0,12
+"112","Physical examination under general anesthesia",0,963
+"113","Plain X-ray guided wire localization of breast lesion",0,11
+"114","Posterior spinal instrumentation with segmental fixation",0,5
+"115","Primary anterior decompression of cervical spinal cord",0,12
+"116","Primary anterior decompression of cervical spinal cord",44514375,7
+"117","Primary anterior decompression of cervical spinal cord and fusion",0,62
+"118","Primary anterior decompression of cervical spinal cord and fusion",44514374,151
+"119","Primary decompression of posterior fossa and upper cervical spinal cord",0,3
+"120","Primary decompression of posterior fossa and upper cervical spinal cord",44514379,6
+"121","Primary decompression of posterior fossa and upper cervical spinal cord and instrumentation",0,1
+"122","Primary decompression of posterior fossa and upper cervical spinal cord and instrumentation",44514378,2
+"123","Primary external fixation stabilization of spinal fracture",0,1
+"124","Primary posterior decompression of lumbar spinal cord",0,2
+"125","Radiofrequency controlled thermal destruction of spinal nerve root",44508010,13
+"126","Radiofrequency denervation of spinal facet joint of lumbar vertebra",44515141,22
+"127","Radiofrequency denervation of spinal facet joint of vertebra",44515143,5
+"128","Re-excision of local recurrence of breast tumour",0,2
+"129","Reconstruction of breast using local skin flap",44508902,2
+"130","Reconstruction of defect of nasal sinus with local flap",0,1
+"131","Reconstruction of skin using local subcutaneous pedicle island axial pattern skin flap",44513111,1
+"132","Reconstruction using local axial pattern subcutaneous pedicle island flap",44513112,1
+"133","Reconstruction using local subcutaneous pedicle fasciocutaneous flap",44513107,3
+"134","Reconstruction using local subcutaneous pedicle myocutaneous flap",44513102,3
+"135","Removal of intrathecal drug delivery device adjacent to spinal cord",44508000,7
+"136","Removal of lesion from spinal extradural space",0,2
+"137","Removal of lesion from spinal intradural extramedullary space",0,1
+"138","Removal of spinal extradural tumor",0,12
+"139","Removal of spinal intradural extramedullary tumor",0,19
+"140","Removal of spinal neurostimulator",44507967,5
+"141","Removal of spinal thecal shunt",0,2
+"142","Repair of spinal cord meninges for cerebrospinal fluid fistula",0,1
+"143","Repair of spinal meninges",0,2
+"144","Repair of spinal pseudomeningocele with laminectomy",0,4
+"145","Revision of anterior decompression of cervical spinal cord",0,2
+"146","Revision of decompression of posterior fossa and upper cervical spinal cord",44514388,1
+"147","Revision of posterior decompression of lumbar spinal cord",0,3
+"148","Revision of shunt in spinal syrinx",0,2
+"149","Revisional anterior decompression operation on cervical spinal cord and fusion",44514383,6
+"150","Sacral laminectomy and excision of intradural spinal lesion",0,10
+"151","Sedation",44517123,4
+"152","Spinal arthrodesis",0,1
+"153","Spinal contrast procedure",44508003,11
+"154","Spinal decompression with discectomy",0,1
+"155","Spinal decompression without discectomy",0,1
+"156","Spinal dural graft",0,7
+"157","Spinal fusion with reduction of spinal deformity",0,2
+"158","Spinal instrumentation with pedicular fixation system",0,1
+"159","Spinal percutaneous cordotomy",44507959,8
+"160","Suture of spinal dura mater",0,1
+"161","Therapeutic epidural injection",0,47
+"162","Therapeutic epidural injection",44507987,42
+"163","Therapeutic lumbar epidural injection",44507983,34
+"164","Therapeutic sacral epidural injection",44507984,178
+"165","Therapeutic spinal puncture",44508002,1
+"166","Thoracic laminectomy and excision of intradural spinal lesion",0,13
+"167","Topical local anesthetic",44517119,4
+"168","Upright stereotactic X-ray guided wire localization of breast lesion",0,29
+"169","Wide local excision of breast lesion",0,105
+"170","Wide local excision of vulva",0,10
