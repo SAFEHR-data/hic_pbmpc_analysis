@@ -12,6 +12,7 @@ source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
 #Reload procedure_occurrence with selected procedure_source_values, collect from database, and convert to tibble
 
 rm(df_procedure_occurrence)
+
 df_procedure_occurrence <- custom_omop_ds$procedure_occurrence %>% 
   filter(
     procedure_source_value == "UCLH AN VENT MODE" |
@@ -36,14 +37,16 @@ df_procedure_occurrence %>% count(procedure_source_value)
 # Add human-readable concept names to the dataset using OMOP concept mappings  
 df_procedure_occurrence <- df_procedure_occurrence %>%omop_join_name_all()
 
-
+rm(df_procedure_occurrence_start_end_time)
 df_procedure_occurrence_start_end_time <- df_procedure_occurrence %>%
   group_by(person_id, procedure_source_value,procedure_concept_name) %>%
   summarise(
     procedure_start = min(procedure_datetime),
-    procedure_end   = max(procedure_datetime),
+    procedure_end   = max(procedure_end_datetime),
     .groups = "drop"
   ) %>% arrange(person_id,procedure_source_value,procedure_concept_name,procedure_start ) %>% collect() 
+
+
 
 df_procedure_occurrence %>%count(procedure_source_value,procedure_concept_name) %>% 
   write_csv("summary_procedure_source_value.csv")
