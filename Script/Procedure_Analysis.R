@@ -9,7 +9,7 @@ source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
 #   as_tibble()
 
 
-# Filter procedures to only include records where the procedure_source_value is "UCLH AN VENT MODE"
+#Reload procedure_occurrence with selected procedure_source_values, collect from database, and convert to tibble
 
 rm(df_procedure_occurrence)
 df_procedure_occurrence <- custom_omop_ds$procedure_occurrence %>% 
@@ -25,10 +25,7 @@ df_procedure_occurrence <- custom_omop_ds$procedure_occurrence %>%
 
 df_procedure_occurrence %>% count(procedure_source_value)
 
-
-
-
-# procedure_source_value            n
+# procedure_source_value            row_count
 # <chr>                         <int>
 # 1 LDA PERIPHERAL IV            435676
 # 2 LDA WOUND INCISION            92830
@@ -48,7 +45,9 @@ df_procedure_occurrence_start_end_time <- df_procedure_occurrence %>%
     .groups = "drop"
   ) %>% arrange(person_id,procedure_source_value,procedure_concept_name,procedure_start ) %>% collect() 
 
-df_procedure_occurrence %>%count(procedure_source_value,procedure_concept_name) %>% write_csv("Procedure_Summary.csv")
+df_procedure_occurrence %>%count(procedure_source_value,procedure_concept_name) %>% 
+  write_csv("summary_procedure_source_value.csv")
+
 # Count and display columns with missing (NA) values
 df_procedure_occurrence %>%
   summarise(across(everything(), ~ sum(is.na(.)))) %>%
@@ -56,6 +55,25 @@ df_procedure_occurrence %>%
   arrange(desc(na_count)) %>%
   filter(na_count > 0) %>%
   view()
+
+
+
+# Filter anaesthetic_type for rows containing key anaesthesia-related terms (case-insensitive), and extract matched keyword
+
+keywords <- c(
+  "General", "Regional", "Local", "Spinal", "Epidural",
+  "Sedation", "Spinal/Epidural",  "anaesthetic", "anaesthesia"
+)
+
+# Filter procedure_occurrence for anaesthesia-related concepts using keywords, 
+# then count and export summary by concept name, source concept ID, and source value
+
+df_anaesthetic_type <- custom_omop_ds$procedure_occurrence %>%omop_join_name_all() %>%
+  filter(str_detect(procedure_concept_name, regex(str_c(keywords, collapse = "|"), ignore_case = TRUE)))
+
+df_anaesthetic_type  %>% count(procedure_concept_name, procedure_source_concept_id) %>%
+  arrange(procedure_source_value,procedure_concept_name) %>%
+  write.csv("summary_anaesthetic_type.csv")
 
 # Visit detail 
 
