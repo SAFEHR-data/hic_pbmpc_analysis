@@ -1,8 +1,0 @@
-procedure_source_value,procedure_concept_name,n
-LDA PERIPHERAL IV,Insertion of peripheral venous cannula into peripheral vein,212835
-LDA PERIPHERAL IV,Removal of peripheral intravenous cannula,222841
-LDA WOUND INCISION,Closure of skin wound,33393
-LDA WOUND INCISION,Incision,59437
-R IP VENT MODE,Mechanically assisted spontaneous ventilation,247163
-R UCLH SSKIN AREAS OBSERVED,Assessment of skin integrity,1048627
-UCLH AN VENT MODE,Artificial ventilation,5466702
