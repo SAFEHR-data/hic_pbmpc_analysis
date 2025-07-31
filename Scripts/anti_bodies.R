@@ -29,6 +29,10 @@ df_antibodies_link_data <- df_antibodies_link_data %>%
   arrange(person_id, measurement_id)
 
 
+
+df_antibodies_link_data %>% arrange(person_id, measurement_id)%>% write_csv("antibodies.csv")
+
+
 df_antibodies_link_data %>% filter(measurement_concept_id!=3001079) %>%tail(10) %>% view() 
 
 skimr::skim(df_antibodies_link_data)

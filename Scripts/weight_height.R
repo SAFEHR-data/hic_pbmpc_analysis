@@ -1,3 +1,5 @@
+library(here)
+
 source(here("Scripts", "open_omop_dataset.R"))
 
 # Define measurement_concept_ids for body weight and height
@@ -43,6 +45,7 @@ df_height_weight_measurement <-df_height_weight_measurement %>%
   arrange(person_id,measurement_id)
 
 
+df_height_weight_measurement %>% arrange(person_id, measurement_id)%>% write_csv("weight_height_measurment.csv")
 
 # -------------------------------------------
 # Count NA values in each column of the measurement table
