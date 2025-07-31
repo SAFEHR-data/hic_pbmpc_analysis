@@ -1,4 +1,4 @@
-source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
+source(here("Scripts", "open_omop_dataset.R"))
 
 # Step 1: Get measurement IDs linked to blood antibody plugin
 df_antibodies_measurrment_link <- custom_omop_ds$measurement_links %>%

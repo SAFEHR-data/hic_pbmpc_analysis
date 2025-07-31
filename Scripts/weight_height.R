@@ -1,4 +1,4 @@
-source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
+source(here("Scripts", "open_omop_dataset.R"))
 
 # Define measurement_concept_ids for body weight and height
 # 4099154 = Body weight (assumed to be in grams)

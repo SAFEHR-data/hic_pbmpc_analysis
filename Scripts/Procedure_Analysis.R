@@ -1,4 +1,4 @@
-source("/data/mqummeru/hic_pbmpc_analysis/Script/open_omop_dataset.R")
+source(here("Scripts", "open_omop_dataset.R"))
 
 # Extract distinct procedure_occurrence_id values where the plugin provenance is "surgical"
 # rm(df_surgical_procedure_id)
