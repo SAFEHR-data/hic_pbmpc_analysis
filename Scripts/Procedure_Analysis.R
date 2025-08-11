@@ -1,3 +1,4 @@
+library(here)
 source(here("Scripts", "open_omop_dataset.R"))
 
 # Extract distinct procedure_occurrence_id values where the plugin provenance is "surgical"
@@ -13,7 +14,7 @@ source(here("Scripts", "open_omop_dataset.R"))
 
 rm(df_procedure_occurrence)
 
-df_procedure_occurrence <- custom_omop_ds$procedure_occurrence %>% 
+df_procedure_occurrence <- omop$procedure_occurrence %>% 
   filter(
     procedure_source_value == "UCLH AN VENT MODE" |
       procedure_source_value == "R UCLH SSKIN AREAS OBSERVED" |
@@ -46,6 +47,8 @@ df_procedure_occurrence_start_end_time <- df_procedure_occurrence %>%
     .groups = "drop"
   ) %>% arrange(person_id,procedure_source_value,procedure_concept_name,procedure_start ) %>% collect() 
 
+
+df_procedure_occurrence_start_end_time %>% write_csv("/data/mqummeru/Output_Report/procedure_start_end_times.csv")
 
 
 df_procedure_occurrence %>%count(procedure_source_value,procedure_concept_name) %>% 

@@ -6,7 +6,7 @@ source(here("Scripts", "open_omop_dataset.R"))
 blood_product <- c(4054727, 4103787, 4054726, 4103788, 4103613)
 
 # Filter the device_exposure table for rows where the device_concept_id matches blood products
-df_device_exposure <- custom_omop_ds$device_exposure %>%
+df_device_exposure <- omop$device_exposure %>%
   filter(device_concept_id %in% blood_product) %>%
   collect() %>%                
   as_tibble()                        
@@ -30,6 +30,6 @@ df_device_exposure_select <- df_device_exposure %>%
   )
 
 
-df_device_exposure_select %>% arrange(person_id, device_exposure_id)%>% write_csv("transfused_Unit.csv")
+df_device_exposure_select %>% arrange(person_id, device_exposure_id)%>% write_csv("/data/mqummeru/Output_Report/transfused_Unit.csv")
 
 

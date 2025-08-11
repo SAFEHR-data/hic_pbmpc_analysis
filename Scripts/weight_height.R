@@ -8,7 +8,7 @@ source(here("Scripts", "open_omop_dataset.R"))
 height_weight <- c(4099154, 4177340)
 
 # Filter only the height and weight measurements from the OMOP measurement table
-df_height_weight_measurement <- custom_omop_ds$measurement %>%
+df_height_weight_measurement <- omop$measurement %>%
   filter(measurement_concept_id %in% height_weight)
 
 # Join concept names (assumes omop_join_name_all is a custom function that adds descriptive names)
@@ -45,7 +45,7 @@ df_height_weight_measurement <-df_height_weight_measurement %>%
   arrange(person_id,measurement_id)
 
 
-df_height_weight_measurement %>% arrange(person_id, measurement_id)%>% write_csv("weight_height_measurment.csv")
+df_height_weight_measurement %>% arrange(person_id, measurement_id)%>% write_csv("/data/mqummeru/Output_Report/weight_height_measurment.csv")
 
 # -------------------------------------------
 # Count NA values in each column of the measurement table

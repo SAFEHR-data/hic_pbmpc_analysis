@@ -14,7 +14,7 @@ source(here("Scripts", "open_omop_dataset.R"))
 
 
 # Filter blood group and RhD measurements
-df_blood_group_rhd <- custom_omop_ds$measurement %>%
+df_blood_group_rhd <- omop$measurement %>%
   filter(measurement_concept_id %in% c(3002529, 3003310)) %>%
   collect()
 
@@ -26,7 +26,7 @@ df_blood_group_rhd <- df_blood_group_rhd %>%
 # Extract sample IDs linked to the selected measurements
 # ------------------------------------------------------------------------------
 
-df_measurment_link_sample_id <- custom_omop_ds$measurement_links %>%
+df_measurment_link_sample_id <- omop$measurement_links %>%
   filter(measurement_id %in% df_blood_group_rhd$measurement_id) %>%
   collect()
 
@@ -66,4 +66,4 @@ df_blood_group_rhd <- df_blood_group_rhd %>%
 
 df_blood_group_rhd %>%
   arrange(measurement_id, person_id) %>%
-  write_csv("group_screen.csv")
+  write_csv("/data/mqummeru/Output_Report/group_screen.csv")

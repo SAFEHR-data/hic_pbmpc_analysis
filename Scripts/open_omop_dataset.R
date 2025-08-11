@@ -42,4 +42,4 @@ read_omop_dataset <- function(path) {
 
 
 custom_path <- "/data/mqummeru/Extract_hic_PBPMC/"   # e.g., "/data/omop/custom/"
-custom_omop_ds <- read_omop_dataset(custom_path)
+omop <- read_omop_dataset(custom_path)

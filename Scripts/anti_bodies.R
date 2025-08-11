@@ -1,13 +1,13 @@
 source(here("Scripts", "open_omop_dataset.R"))
 
 # Step 1: Get measurement IDs linked to blood antibody plugin
-df_antibodies_measurrment_link <- custom_omop_ds$measurement_links %>%
+df_antibodies_measurrment_link <- omop$measurement_links %>%
   filter(plugin_provenance == "blood_antibody_bm") %>%
   select(measurement_id) %>%
   collect()
 
 # Step 2: Retrieve measurement records that match the antibody measurement IDs
-df_antibodies_link_data <- custom_omop_ds$measurement %>%
+df_antibodies_link_data <- omop$measurement %>%
   filter(measurement_id %in% df_antibodies_measurrment_link$measurement_id)
 
 # Step 3: Join with concept names for readability (assumes omop_join_name_all enriches concept fields)
@@ -30,7 +30,7 @@ df_antibodies_link_data <- df_antibodies_link_data %>%
 
 
 
-df_antibodies_link_data %>% arrange(person_id, measurement_id)%>% write_csv("antibodies.csv")
+df_antibodies_link_data %>% arrange(person_id, measurement_id)%>% write_csv("/data/mqummeru/Output_Report/antibodies.csv")
 
 
 df_antibodies_link_data %>% filter(measurement_concept_id!=3001079) %>%tail(10) %>% view() 
