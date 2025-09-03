@@ -53,6 +53,7 @@ df_tx_procedure <- df_TXA_drug_exposure %>%
   ) %>%
   select(
     person_id,
+    drug_concept_name,
     drug_exposure_start_date,
     drug_exposure_start_datetime,
     procedure_datetime
@@ -71,7 +72,7 @@ df_tx_procedure <- df_TXA_drug_exposure %>%
 # ==============================
 df_tx_procedure %>%
   filter(within_60_min == TRUE) %>%
-  ggplot(aes(x = time_diff_min)) +
+  ggplot(aes(x = time_diff_min, fill = drug_concept_name)) +
   geom_histogram(binwidth = 5, fill = "steelblue", color = "white", boundary = 0) +
   labs(
     title = "TXA Timing Relative to Surgery",
@@ -81,5 +82,7 @@ df_tx_procedure %>%
   theme_minimal()
 
 
+df_tx_procedure %>%
+  filter(within_60_min == TRUE) %>% group_by(drug_concept_name) %>% summarise(n()) %>% view()
 
-
+df_tx_procedure %>% view()
