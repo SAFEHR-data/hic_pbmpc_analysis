@@ -104,7 +104,7 @@ n_top <- 20
 
 df_long <- summary_by_procedure %>%
   slice_head(n = n_top) |>
-  tidyr::pivot_longer(
+  pivot_longer(
     cols = c(patients_transfused, units_received),
     names_to = "metric",
     values_to = "value"
