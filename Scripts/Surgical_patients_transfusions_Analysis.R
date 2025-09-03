@@ -8,8 +8,8 @@ source(here("Scripts", "open_omop_dataset.R"))
 # ==============================
 
 # Collect device exposure IDs
-df_device_exposure_id <- omop$device_exposure_links |>
-  select(device_exposure_id) |>
+df_device_exposure_id <- omop$device_exposure_links %>%
+  select(device_exposure_id) %>%
   collect()
 
 # Define concept IDs for various blood products
@@ -45,12 +45,14 @@ df_surgical_procedure_id <- omop$procedure_occurrence_links %>%
 
 rm(df_procedure_occurrence)
 df_procedure_occurrence <- omop$procedure_occurrence%>%
-  #filter(procedure_occurrence_id %in% df_surgical_procedure_id$procedure_occurrence_id)%>%
+  #filter(procedure_occurrence_id %in% df_surgical_procedure_id$procedure_occurrence_id)%>%   
   filter(person_id %in% df_device_exposure_person_id$person_id)%>%
   collect() |>
   omop_join_name_all()
 
 df_procedure_occurrence %>% select(person_id) %>%distinct() %>% count(person_id)
+
+#10,404
 
 # ==============================
 # Transfusions within 7 days of procedure
